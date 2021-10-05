@@ -1,0 +1,306 @@
+﻿{
+  "configurations": [
+    {
+      "name": "msvc_x64-debug",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "inheritEnvironments": ["msvc_x64_x64"],
+      "buildRoot": "${projectDir}\\build\\vs\\${name}",
+      "installRoot": "${projectDir}\\install\\vs\\${name}",
+      "cmakeCommandArgs": "-DUSE_WIN_MULTI_THREAD_DLL=ON -DBUILD_SHARED_LIBS:BOOL=ON",
+      "buildCommandArgs": "-j24",
+      "ctestCommandArgs": "-j24",
+      "cmakeToolchain": "vcpkg/scripts/buildsystems/vcpkg.cmake",
+      "addressSanitizerEnabled": true,
+      "variables": [
+        {
+          "name": "ENABLE_CPPCHECK",
+          "value": "OFF",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_CLANG_FORMAT",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_CLANG_TIDY",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_INCLUDE_WHAT_YOU_USE",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_UNIT_TEST",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "CODE_COVERAGE ",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_FUZZ_TEST",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_INTEGRATE_TEST",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_E2E_TEST",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_EXAMPLE",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_DOXYGEN",
+          "value": "ON",
+          "type": "BOOL"
+        }
+      ]
+    },
+    {
+      "name": "msvc_x64-release",
+      "generator": "Ninja",
+      "configurationType": "Release",
+      "inheritEnvironments": ["msvc_x64_x64"],
+      "buildRoot": "${projectDir}\\build\\vs\\${name}",
+      "installRoot": "${projectDir}\\install\\vs\\${name}",
+      "cmakeCommandArgs": "-DUSE_WIN_MULTI_THREAD_DLL=ON -DBUILD_SHARED_LIBS:BOOL=ON",
+      "buildCommandArgs": "-j24",
+      "ctestCommandArgs": "-j24",
+      "cmakeToolchain": "vcpkg/scripts/buildsystems/vcpkg.cmake",
+      "variables": [
+        {
+          "name": "ENABLE_CPPCHECK",
+          "value": "OFF",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_CLANG_FORMAT",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_CLANG_TIDY",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_INCLUDE_WHAT_YOU_USE",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_UNIT_TEST",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "CODE_COVERAGE ",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_FUZZ_TEST",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_INTEGRATE_TEST",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_E2E_TEST",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_EXAMPLE",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_DOXYGEN",
+          "value": "ON",
+          "type": "BOOL"
+        }
+      ]
+    },
+    {
+      "name": "clang_x64-debug",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "buildRoot": "${projectDir}\\build\\vs\\${name}",
+      "installRoot": "${projectDir}\\install\\vs\\${name}",
+      "cmakeCommandArgs": "-DUSE_WIN_MULTI_THREAD_DLL=ON -DBUILD_SHARED_LIBS=ON",
+      "buildCommandArgs": "-j24",
+      "ctestCommandArgs": "-j24",
+      "cmakeToolchain": "vcpkg/scripts/buildsystems/vcpkg.cmake",
+      "inheritEnvironments": ["clang_cl_x64_x64"],
+      "enableClangTidyCodeAnalysis": true,
+      // link error when compile debug with addressSanitizerEnabled
+      //"addressSanitizerEnabled": true,
+      "variables": [
+        {
+          "name": "CMAKE_CXX_COMPILER",
+          "value": "C:\\Users\\jakez\\scoop\\apps\\llvm\\12.0.1\\bin\\clang++.exe",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_C_COMPILER",
+          "value": "C:\\Users\\jakez\\scoop\\apps\\llvm\\12.0.1\\bin\\clang.exe",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "ENABLE_CPPCHECK",
+          "value": "OFF",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_CLANG_FORMAT",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_CLANG_TIDY",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_INCLUDE_WHAT_YOU_USE",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_UNIT_TEST",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "CODE_COVERAGE ",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_FUZZ_TEST",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_INTEGRATE_TEST",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_E2E_TEST",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_EXAMPLE",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_DOXYGEN",
+          "value": "ON",
+          "type": "BOOL"
+        }
+      ]
+    },
+    {
+      "name": "clang_x64-release",
+      "generator": "Ninja",
+      "configurationType": "Release",
+      "buildRoot": "${projectDir}\\build\\vs\\${name}",
+      "installRoot": "${projectDir}\\install\\vs\\${name}",
+      "cmakeCommandArgs": "-DUSE_WIN_MULTI_THREAD_DLL=ON -DBUILD_SHARED_LIBS=ON",
+      "buildCommandArgs": "-j24",
+      "ctestCommandArgs": "-j24",
+      "cmakeToolchain": "vcpkg/scripts/buildsystems/vcpkg.cmake",
+      "inheritEnvironments": ["clang_cl_x64_x64"],
+      "enableClangTidyCodeAnalysis": true,
+      "addressSanitizerEnabled": true,
+      "variables": [
+        {
+          "name": "CMAKE_CXX_COMPILER",
+          "value": "C:\\Users\\jakez\\scoop\\apps\\llvm\\12.0.1\\bin\\clang++.exe",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_C_COMPILER",
+          "value": "C:\\Users\\jakez\\scoop\\apps\\llvm\\12.0.1\\bin\\clang.exe",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "ENABLE_CPPCHECK",
+          "value": "OFF",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_CLANG_FORMAT",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_CLANG_TIDY",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_INCLUDE_WHAT_YOU_USE",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_UNIT_TEST",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "CODE_COVERAGE ",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_FUZZ_TEST",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_INTEGRATE_TEST",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_E2E_TEST",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_EXAMPLE",
+          "value": "ON",
+          "type": "BOOL"
+        },
+        {
+          "name": "ENABLE_DOXYGEN",
+          "value": "ON",
+          "type": "BOOL"
+        }
+      ]
+    }
+  ]
+}

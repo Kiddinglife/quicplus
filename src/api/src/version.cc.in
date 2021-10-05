@@ -1,0 +1,32 @@
+#include <quicplus/api.h>
+namespace quicplus
+{
+  std::string GetVersion()
+  {
+    return "@PROJECT_VERSION@";
+  }
+  unsigned GetMajorNum()
+  {
+    return @PROJECT_VERSION_MAJOR@;
+  }
+  unsigned GetMinorNum()
+  {
+    return @PROJECT_VERSION_MINOR@;
+  }
+  unsigned GetPatchNum()
+  {
+    return @PROJECT_VERSION_PATCH@;
+  }
+  std::string GetMajorStr()
+  {
+    return "@PROJECT_VERSION_MAJOR@";
+  }
+  std::string GetMinorStr()
+  {
+    return "@PROJECT_VERSION_MINOR@";
+  }
+  std::string GetPatchStr()
+  {
+    return "@PROJECT_VERSION_PATCH@";
+  }
+} // namespace quicplus

@@ -1,0 +1,35 @@
+{
+  "cmake.configureOnOpen": true,
+  "cmake.parallelJobs": 8,
+  // "cmake.generator": "Ninja",
+  // vs generator forbids the use of clang compiler so use ninja is more flexiable
+  "cmake.generator": "Visual Studio 16 2019",
+  "cmake.buildArgs": [],
+  "cmake.loggingLevel": "info",
+  "cmake.installPrefix": "D:/workspace/quicplus/build/Install",
+  "cmake.configureSettings": {
+    "ENABLE_CPPCHECK": "ON",
+    "ENABLE_CLANG_TIDY": "ON",
+    "ENABLE_INCLUDE_WHAT_YOU_USE": "ON",
+    "ENABLE_TEST": "ON",
+    "CODE_COVERAGE": "ON",
+    "ENABLE_EXAMPLE": "ON",
+    "ENABLE_DOXYGEN": "ON",
+    "ENABLE_CLANG_FORMAT": "ON",
+    // "BUILD_SHARED_LIBS": "ON",
+    "BUILD_SHARED_LIBS": "OFF",
+    "WARNINGS_AS_ERRORS": "ON",
+    "USE_WIN_MULTI_THREAD_DLL": "OFF",
+    // "USE_WIN_MULTI_THREAD_DLL": "ON",
+    // windows-CLANG sanitizer needs release build + x64-windows-static+USE_WIN_MULTI_THREAD_DLL OFF
+    // (off got 'ERROR: AddressSanitizer: odr-violation')
+    // windows-msvc sanitizer needs debug build + x64-windows + USE_WIN_MULTI_THREAD_DLL ON
+    "USE_SANITIZER": "Address",
+    // "USE_SANITIZER": "",
+    // WHEN CHANGE VCPKG_TARGET_TRIPLET, must clean cache and configure
+    "VCPKG_TARGET_TRIPLET": "x64-windows-static",
+    // "VCPKG_TARGET_TRIPLET": "x64-windows",
+    "CMAKE_TOOLCHAIN_FILE": "D:/workspace/vcpkg/scripts/buildsystems/vcpkg.cmake"
+  },
+  "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
+}
