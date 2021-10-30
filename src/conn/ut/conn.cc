@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include <libone/libone.h>
+#include <conn/conn.h>
 
 #include <cmath>
 #include <cstdlib>
@@ -10,8 +10,8 @@ TEST(TestOne, LibOne)
 {
   std::cout << "Running test on the exported library!" << std::endl;
 
-  libone::SummationSubClass sum_class;
-  libone::DifferenceSubClass diff_class;
+  conn::SummationSubClass sum_class;
+  conn::DifferenceSubClass diff_class;
 
   constexpr double kTOL = 1e-10;
   constexpr double kOP1 = 15.0;

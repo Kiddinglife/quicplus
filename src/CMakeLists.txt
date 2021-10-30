@@ -15,12 +15,14 @@ set_target_properties(
   ${LIBRARY_TARGET_NAME} PROPERTIES VERSION ${PROJECT_VERSION} PUBLIC_HEADER
                                                                "${PUBLIC_HDRS}")
 
-# PRIVATE "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/libone/include>"
-# <libone/libone.h> cannot be found in header file but can be found in cc file
+# PRIVATE "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/conn/include>"
+# <conn/conn.h> cannot be found in header file but can be found in cc file becasue 
+# unit test and example needs those includes so it must be as public
 target_include_directories(
   ${LIBRARY_TARGET_NAME}
   PUBLIC "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/api/include>"
-         "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/libone/include>"
+         "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/conn/include>"
+         "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/common/include>"
          "$<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CMAKE_INSTALL_INCLUDEDIR}>")
 
 install(
@@ -35,7 +37,7 @@ install(
                 COMPONENT dev)
 
 if(ENABLE_TEST)
-  add_subdirectory(libone/ut)
+  add_subdirectory(conn/ut)
   add_subdirectory(api/ut)
 endif()
 
