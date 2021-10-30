@@ -6,7 +6,7 @@
 
 int main()
 {
-  std::cout << "Executable example using the library!" << quicplus::GetVersion() << std::endl;
+  std::cout << "Executable example using the library! " << quicplus::GetVersion() << std::endl;
 
   quicplus::SummationClass sum_class;
   quicplus::DifferenceClass diff_class;
