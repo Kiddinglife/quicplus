@@ -32,6 +32,10 @@ namespace conn
      * mc_created.
      */
     unsigned char mc_largest_recv[MiniConnLargestRecvSize];
+    void dummy()
+    {
+      mc_largest_recv[0] = 1;
+    }
   };
 
   /**

@@ -179,7 +179,7 @@ jobs:
               -DWARNINGS_AS_ERRORS=ON \
               -DCODE_COVERAGE=ON \
               -DUSE_WIN_MULTI_THREAD_DLL=ON \
-              -DENABLE_CLANG_TIDY=ON \
+              -DENABLE_CLANG_TIDY=OFF \
               -DENABLE_CLANG_FORMAT=ON \
               -DENABLE_TEST=ON \
               -DENABLE_EXAMPLE=ON \

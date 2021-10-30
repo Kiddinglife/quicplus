@@ -1,7 +1,10 @@
 #ifndef QuicPlus_QTAGS_H
 #define QuicPlus_QTAGS_H
 
-#define TAG(a, b, c, d) ((uint32_t)(((unsigned)d << 24) + ((unsigned)c << 16) + ((unsigned)b << 8) + (unsigned)a))
+#define TAG(a, b, c, d)                                                                                       \
+  (static_cast<uint32_t>(                                                                                     \
+      (static_cast<unsigned>(d) << 24) + (static_cast<unsigned>(c) << 16) + (static_cast<unsigned>(b) << 8) + \
+      static_cast<unsigned>(a)))
 
 #define QTAG_AEAD TAG('A', 'E', 'A', 'D')
 #define QTAG_AESG TAG('A', 'E', 'S', 'G')

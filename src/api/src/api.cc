@@ -72,7 +72,7 @@ const char* quicplus::CommonSettings::ValidateSettings()
     snprintf(errorDescription, sizeof(errorDescription), "%s", "No supported QUIC versions specified");
     return errorDescription;
   }
-  if (versions & ~SUPPORTED_VERSIONS)
+  if (versions & static_cast<unsigned int>(~SUPPORTED_VERSIONS))
   {
     snprintf(errorDescription, sizeof(errorDescription), "%s", "one or more unsupported QUIC version is specified");
     return errorDescription;
@@ -130,7 +130,7 @@ const char* quicplus::CommonSettings::ValidateSettings()
         errorDescription,
         sizeof(errorDescription),
         "max batch size is greater than the allowed maximum of %u",
-        (unsigned)MAX_OUT_BATCH_SIZE);
+        MAX_OUT_BATCH_SIZE);
     return errorDescription;
   }
   return nullptr;

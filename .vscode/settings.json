@@ -9,7 +9,7 @@
   "cmake.installPrefix": "C:/Users/JZ106540/source/repos/sandbox/quicplus/build/Install",
   "cmake.configureSettings": {
     "ENABLE_CPPCHECK": "ON",
-    "ENABLE_CLANG_TIDY": "ON",
+    "ENABLE_CLANG_TIDY": "OFF",
     "ENABLE_INCLUDE_WHAT_YOU_USE": "ON",
     "ENABLE_TEST": "ON",
     "CODE_COVERAGE": "ON",
